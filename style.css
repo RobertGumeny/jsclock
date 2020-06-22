@@ -52,6 +52,20 @@ h1 {
   width: 50%;
   height: 6px;
   background: black;
+  border-radius: 3px;
   position: absolute;
   top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.25s;
+  transition-timing-function: ease-in;
+}
+
+#second-hand {
+  height: 3px;
+}
+
+#digital-time {
+  color: white;
+  font-size: 4rem;
 }
