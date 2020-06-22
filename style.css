@@ -63,6 +63,11 @@ h1 {
 
 #second-hand {
   height: 3px;
+  background: #222;
+}
+
+#minute-hand {
+  height: 5px;
 }
 
 #digital-time {

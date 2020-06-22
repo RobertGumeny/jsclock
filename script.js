@@ -14,16 +14,25 @@ function setDate() {
 
   // convert units of time into degrees to align different clock hands
   const secondsDegrees = ((seconds / 60) * 360) + 90;
-  const minutesDegrees = ((minutes / 60) * 360) + 90;
-  const hoursDegrees = ((hours / 60) * 360) + 90;
+  const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 5) + 90;
+  const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 6) + 90;
 
   // move clock hands when unit changes
   secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+  if (seconds == 60) {
+    secondHand.style.transition = ``;
+    setTimeout(function () {
+
+      secondHand.style.transition = `all 0.5s`;
+    }, 25)
+  }
   minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
   hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 
   // display time digitally at top of page
   digital.innerText = `${hours}:${minutes}:${seconds}`;
+  console.log(seconds)
+  console.log(secondsDegrees)
 }
 
 
